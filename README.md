@@ -11,4 +11,3 @@ Either way, I really enjoyed my time working on the Beach Bots robotics team. It
 * Vision Pipeline
 * Lift PID Controller
 * Dynamic Pathing
-* Attempt at Differential Elevator Lift
