@@ -31,8 +31,10 @@ I then applied these color constraints to the video data. This would create a vi
 Core.inRange(workingMatrix, new Scalar(VisionVariables.hueMin, VisionVariables.saturationMin, VisionVariables.valueMin),
    new Scalar(VisionVariables.hueMax, VisionVariables.saturationMax, VisionVariables.valueMax), workingMatrix);
 ```
-This is what the resulting video data looks like:
-
+This is what the resulting image data looks like:
+<p align="center">
+  <img src="./Media/FilterImage.png" alt="Filtered Image Output" width="738">
+</p>
 
 Next, I had to split the video data into two separate views, one for the left side and one for the right side. Getting the amount of "lime" pixels in each view was really simple because I only had to check pixels that were non-black (white) in the new view.
 ```java
