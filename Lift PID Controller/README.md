@@ -14,6 +14,9 @@ Here, we could convert the ticks that the motor has "traveled" (which the motor 
 The solution is to use a [PID controller](https://en.wikipedia.org/wiki/PID_controller) (proportion-integral-derivative controller). The PID controller utilizes a feedback loop to constantly update the power of the motors to ensure a smooth transition to the desired lift height. The proportion component is proportional to the distance or "error" between the desired target value and the current value. So as the current value reaches closer to the target value, the proportional component decreases. The integral and derivative components also help to create a smoother transition by reducing some of the oscillations that the feedback loop can experience once it reaches the target value. Here is the code for the PID controller:
 
 ```java
+public static double kP = .5;
+public static double kF = 0.05;
+
 public void updatePID(double target) {
   double leftError = target - encoderTicksToInches(leftLift.getCurrentPosition());
   double leftPid = leftError * kP + Math.copySign(kF, leftError);
@@ -22,3 +25,4 @@ public void updatePID(double target) {
   rightLift.setPower(leftPid);
 }
 ```
+It required **lots** of testing in order to achieve a suitable kP value. We also found that the integral and derivative components did not have an effect on the results of our lift and so decided to remove them from the feedback loop. However, we added another component (kF) called feed forward. This component is always added to the motor power equation and gives the PID a little bit of necessary extra power when the proportional component becomes very small.
