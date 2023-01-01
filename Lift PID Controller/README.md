@@ -25,4 +25,4 @@ public void updatePID(double target) {
   rightLift.setPower(leftPid);
 }
 ```
-It required **lots** of testing in order to achieve a suitable kP value. We also found that the integral and derivative components did not have a positive effect and so we decided to remove them from the feedback loop. However, we added another component (kF) called feed forward. This component is always added to the motor power equation and gives the PID a little bit of necessary extra power when the proportional component becomes very small.
+Here, the "error" value is scaled by the kP constant. It required **lots** of testing in order to achieve a suitable kP value. We also found that the integral and derivative components did not have a positive effect and so we decided to remove them from the feedback loop. However, we added another component (kF) called feed forward. This component is always added to the motor power equation and gives the PID a little bit of necessary extra power when the proportional component becomes very small.
