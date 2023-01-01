@@ -1,4 +1,4 @@
-# Beach Bots 18253 Code Documentation
+# [Beach Bots 18253](https://www.instagram.com/beachbotsftc/?hl=en) Code Documentation
 
 This repository holds some of the documentation for the code I programmed for the 2021-2022 FIRST Tech Challenge. This repository does not contain the entire code for the robot but rather highlights some of the important interesting features.
 
