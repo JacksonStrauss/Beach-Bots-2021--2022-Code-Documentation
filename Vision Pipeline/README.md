@@ -33,7 +33,7 @@ Core.inRange(workingMatrix, new Scalar(VisionVariables.hueMin, VisionVariables.s
 ```
 This is what the resulting image data looks like:
 <p align="center">
-  <img src="./Vision Pipeline/Media/FilterImage.png" alt="Filtered Image Output" width="738">
+  <img src="./Vision Pipeline/Media/FilteredImage.png" alt="Filtered Image Output" width="738">
 </p>
 
 Next, I had to split the video data into two separate views, one for the left side and one for the right side. Getting the amount of "lime" pixels in each view was really simple because I only had to check pixels that were non-black (white) in the new view.
