@@ -11,4 +11,14 @@ public static double encoderTicksToInches(double ticks) {
 ```
 Here, we could convert the ticks that the motor has "traveled" (which the motor keeps track of internally) and convert it to a distance value in inches which would tell us how high our vertical lift goes. But how does the lift know when to stop? Should it cut all power as soon as it hits the required threshold? This causes very abrupt and frankly innacurate positioning of the lift.
 
-The solution is to use a [PID controller](https://en.wikipedia.org/wiki/PID_controller) (proportion-integral-derivative controller). The PID controller utilizes a feedback loop to constantly update the power of the motors to ensure a smooth transition to the desired lift height. The proportion component is proportional to the distance or "error" between the desired target value and the current value. So as the current value reaches closer to the target value, the proportional component decreases. The integral and derivative components also help to 
+The solution is to use a [PID controller](https://en.wikipedia.org/wiki/PID_controller) (proportion-integral-derivative controller). The PID controller utilizes a feedback loop to constantly update the power of the motors to ensure a smooth transition to the desired lift height. The proportion component is proportional to the distance or "error" between the desired target value and the current value. So as the current value reaches closer to the target value, the proportional component decreases. The integral and derivative components also help to create a smoother transition by reducing some of the oscillations that the feedback loop can experience once it reaches the target value. Here is the code for the PID controller:
+
+```java
+public void updatePID(double target) {
+  double leftError = target - encoderTicksToInches(leftLift.getCurrentPosition());
+  double leftPid = leftError * kP + Math.copySign(kF, leftError);
+  
+  leftLift.setPower(leftPid);
+  rightLift.setPower(leftPid);
+}
+```
