@@ -26,3 +26,12 @@ public void updatePID(double target) {
 }
 ```
 Here, the "error" value is scaled by the kP constant. It required **lots** of testing in order to achieve a suitable kP value. We also found that the integral and derivative components did not have a positive effect and so we decided to remove them from the feedback loop. However, we added another component (kF) called feed forward. This component is always added to the motor power equation and gives the PID a little bit of necessary extra power when the proportional component becomes very small.
+
+Because the integral and derivative components did not seem to work, we had to add in a manual feature that cut the power of the motors when the "zero" height was reached or else the lift motors would oscillate back and forth because they could never perfectly reach the desired height due to the nature of the PID loop and also probably some slipping of the belts.
+```java
+// If the target height is 0 and the "error" is within a certain threshold, then cut the power of the motors so they don't oscillate.
+if (target == 0 && Math.abs(leftError) <= cutEnginePIDMin) {
+  leftLift.setPower(0);
+  rightLift.setPower(0);
+}
+```
