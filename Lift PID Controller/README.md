@@ -40,3 +40,4 @@ if (target == 0 && Math.abs(leftError) <= cutEnginePIDMin) {
   rightLift.setPower(0);
 }
 ```
+In conclusion, this PID system for the lift worked really well! We would always reliably and smoothly travel to the correct vertical position with our lift. It could probably be improved a bit by testing more with the integral and derivative components (tuning the constants better).
