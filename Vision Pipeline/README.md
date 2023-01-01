@@ -64,5 +64,6 @@ if (right > left + MARGIN) {
 } else {
   location = "CENTER";
 }
-
 ```
+
+Based on this location output information, the robot can now complete the correct task when the game starts and achieve the maximum amount of points regarding this vision aspect of the challenge.
