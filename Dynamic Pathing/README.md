@@ -4,3 +4,5 @@ A key component of the FTC challenges is that there are 30 seconds of "autonomou
 by a person but rather runs a set of automated tasks. After the 30 seconds are up, the robot is then allowed to be controlled manually.
 
 Programming the robot to perform automated tasks can be extremely challenging because you have to keep track of the robot's position the whole time. If the robot's location tracking system is not extremely accurate then cumulative errors will build and the robot's location tracking becomes less and less accurate over time. This is similar to the issue found when using the [dead reckoning navigation technique](https://en.wikipedia.org/wiki/Dead_reckoning).
+
+We utilized a really useful library called [Road Runner](https://learnroadrunner.com/#frequently-asked-questions) which allowed us to use the combination of an [IMU](https://en.wikipedia.org/wiki/Inertial_measurement_unit) and [odometry dead wheels](https://gm0.org/en/latest/docs/common-mechanisms/dead-wheels.html) to determine the location of our robot in autonomous mode and create custom trajectories that the robot could follow.
