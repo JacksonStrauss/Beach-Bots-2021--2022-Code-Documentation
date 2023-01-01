@@ -5,6 +5,11 @@ that object onto a platform. In terms of mechanical components, we decided to us
 
 It would be easy enough to set the powers of the motors to be equal so that the lift raises evenly, but the problem arises with making sure the lift arrives smoothly at its desired vertical height. We were able to keep track of the vertical height of the lift with the following method:
 ```java
+public static double SPOOL_SIZE_IN =.73818898;
+public static double MOTOR_RATIO = 5.2;
+public static double TICKS_PER_REV = MOTOR_RATIO * 28.0;
+public static double GEAR_RATIO = 1;
+
 public static double encoderTicksToInches(double ticks) {
   return SPOOL_SIZE_IN * 2 * Math.PI * GEAR_RATIO * ticks / TICKS_PER_REV;
 }
