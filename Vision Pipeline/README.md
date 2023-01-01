@@ -26,3 +26,23 @@ public static double saturationMax = 200;
 public static double valueMin = 90;
 public static double valueMax = 250;
 ```
+I then applied these color constraints to the video data. This would create a view where all of the lime green pixels are white and all other pixels become black. 
+```java
+Core.inRange(workingMatrix, new Scalar(VisionVariables.hueMin, VisionVariables.saturationMin, VisionVariables.valueMin),
+   new Scalar(VisionVariables.hueMax, VisionVariables.saturationMax, VisionVariables.valueMax), workingMatrix);
+```
+This is what the resulting video data looks like:
+
+
+Next, I had to split the video data into two separate views, one for the left side and one for the right side. Getting the amount of "lime" pixels in each view was really simple because I only had to check pixels that were non-black (white) in the new view.
+```java
+// The submat method divides the frame into a smaller section using the paramters (rowStart, rowEnd, colStart, colEnd)
+
+Mat matWholeLeft = workingMatrix.submat(10, 319, 10, 110);
+Mat matWholeRight = workingMatrix.submat(10, 319, 139, 239);
+
+// matTotalLeft and matTotalRight represent the numerical amount of lime pixels in each side of the camera's view
+matTotalLeft = Core.sumElems(matWholeLeft).val[0];
+matTotalRight = Core.sumElems(matWholeRight).val[0];
+
+```
