@@ -7,7 +7,7 @@ Each team had their own custom physical marker that they could use for vision de
 </p>
 
 
-In the example image, a model traffic cone is used as the marker. We decided to base our vision detection on color and so we made our marker a lime green cone. In order to actually capture video, we used a small, low-end camera and integrated it into our software using [EasyOpenCV](https://github.com/OpenFTC/EasyOpenCV), a library that allows for easier integration with the popular computer vision library, [OpenCV](https://opencv.org/). 
+In the example image, a model traffic cone is used as the marker. We decided to base our vision detection on color and so we made our marker a lime green cone. In order to actually capture video, we used a small logitech camera and integrated it into our software using [EasyOpenCV](https://github.com/OpenFTC/EasyOpenCV), a library that allows for easier integration with the popular computer vision library, [OpenCV](https://opencv.org/). 
 
 Our idea was to apply a filter that converted the BGR video data into HSV data where we could limit what hue, saturation, and value for each pixel that is processed. We would detect where only the lime pixels were using the vision pipeline. If there were the most lime pixels on the left side of the camera's view, then that must mean that the marker is on the left. We decided to only check the left and right side of the camera's view for lime pixels, determining that the marker was in the center if there was not a presence of lime pixels in the left or right side.
 
