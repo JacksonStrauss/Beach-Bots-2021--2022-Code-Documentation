@@ -1,6 +1,6 @@
 # [Beach Bots 18253](https://www.instagram.com/beachbotsftc/?hl=en) Code Documentation
 
-This repository holds some of the documentation for the code I programmed for the 2021-2022 FIRST Tech Challenge. This repository does not contain the entire code for the robot but rather highlights some of the important interesting features.
+This repository holds some of the documentation for the code I programmed for the 2021-2022 [FIRST Tech Challenge](https://www.firstinspires.org/robotics/ftc). This repository does not contain the entire code for the robot but rather highlights some of the important interesting features.
 
 We faced some challenges throughout the year and so our team did not end up qualifying for the 2021-2022 World Championship though we did win the Innovate Award at the Los Angeles FTC Qualifier Event. Our team also participated in the [Maryland Tech Invitational](https://sites.google.com/view/mdtechinvitational/home) but due to a combination of last-minute mechanical issues and software issues, we did not perform as well as we would have liked.
 
