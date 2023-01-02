@@ -22,4 +22,4 @@ public TrajectorySequence createTrajectory(SampleTankDrive drive) {
   return trajectory1;
 }
 ```
-By using the PoseEstimate of the robot (the location of the robot) in real time, we could much more accurately create paths for the robot to follow.
+By using the PoseEstimate of the robot (the location of the robot) in real time, we could much more accurately create paths for the robot to follow. There isn't really too much code here to showcase but this solution ended up being extremely helpful. I think in the future, it would be better to either tune Road Runner better so that the robot can actually follow the path it's supposed to, or create a custom autonomous motion controller for the robot.
