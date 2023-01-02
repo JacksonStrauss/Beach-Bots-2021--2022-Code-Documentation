@@ -36,19 +36,19 @@ switch(state) {
       target = highPOS;
       state = State.TRANSITION;
     }
-    break;
-    case TRANSITION:
+  break;
+  case TRANSITION:
       if(gamepad2.right_bumper && (currentloop - last_rightbumper_press) > PRESS_TIME_MS) {
         last_rightbumper_press = currentloop;
         state = State.DEPOSIT;
       }
-      break;
-      case DEPOSIT:
-        if(!gamepad2.right_bumper) {
-          state = State.TRANSITION;
-        }
-      break;
-  }
+  break;
+  case DEPOSIT:
+    if(!gamepad2.right_bumper) {
+      state = State.TRANSITION;
+    }
+  break;
+}
 
 
 
