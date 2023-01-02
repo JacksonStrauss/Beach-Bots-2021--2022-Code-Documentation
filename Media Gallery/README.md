@@ -1,3 +1,6 @@
+## Media Gallery
+(May take some time for photos to load)
+
 <p align="left">
   <img src="./Photo1.png" alt="Photo 1" width="500">
 </p>
