@@ -49,9 +49,9 @@ switch(state) {
     }
   break;
 }
-
-
-
-
-
 ```
+A lot of the functional code that makes the servos turn or the motors run is cut out here to showcase the main functionality of the state machine. When the conditions of one state are met, the state machine then immediately switches to the next state. The states are in a constant cycle of switching back and forth between each other. 
+
+One neat little addition is the cooldown timer for the "TRANSITION" state. A timer keeps track of the last time the button was pressed and if it is too recent then it will not call for the state change. Because we use the same button to switch between the transition state and the deposit state, we have to add in the cooldown timer or else the state machine will switch between the two states for every single cycle that the button is pressed down.
+
+The state machine itself isn't too complex of a system to implement but it really does increase the efficiency and readability of the code substantially. We also used a state machine in the autonomous mode for the dynamic pathing (which you can learn about in the Dynamic Pathing section of this repository) but I think this page illustrates well enough how we used finite-state machines for our robot.
