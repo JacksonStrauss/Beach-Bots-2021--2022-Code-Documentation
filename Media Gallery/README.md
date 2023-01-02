@@ -1,5 +1,6 @@
 ## Media Gallery
 (May take some time for photos to load)
+(Also, there were three different design iterations of our robot for the 2021-2022 season)
 
 <p align="left">
   <img src="./Photo1.png" alt="Photo 1" width="500">
