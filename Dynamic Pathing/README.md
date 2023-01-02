@@ -11,7 +11,7 @@ One of the issues that we faced using Road Runner was that you could only create
 
 The solution was to tell the robot to travel further than it really should have been. For example, if the robot needed to travel to (10, 10) from (0, 0) but was only making it to (8, 8), then we could tell the robot to try and travel to (12, 12). This sort of worked and the robot would usually end up around (10, 10) but this was a really janky and bad way of solving the problem. We weren't 100% sure where are robot was going to end up every time and this posed a problem for creating our trajectories. Because of the constraints of Road Runner, we had to create our trajectories before the program ran and because we couldn't rely on the end position of our robot after each trajectory, the compounding errors became really bad.
 
-I decided to make a way to dynamically create trajectory paths as the robot was running and moving around. We could now create trajectories whenever we wanted based on our true position rather than having to define all our trajectories before the program really ran (a major limitation of Road Runner). 
+I decided to make a way to dynamically create trajectory paths as the robot was moving around. We could now create trajectories whenever we wanted based on our true position rather than having to define all our trajectories before the program could run (a major limitation of Road Runner). 
 
 ```java
 public TrajectorySequence createTrajectory(SampleTankDrive drive) {
