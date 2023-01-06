@@ -12,4 +12,3 @@ Either way, I really enjoyed my time working on the Beach Bots robotics team. It
 * [Lift PID Controller](https://github.com/JacksonStrauss/BeachBots2021-2022-CodeDocumentation/tree/main/Lift%20PID%20Controller)
 * [Finite State Machine](https://github.com/JacksonStrauss/BeachBots2021-2022-CodeDocumentation/tree/main/Finite%20State%20Machine)
 * [Dynamic Pathing](https://github.com/JacksonStrauss/BeachBots2021-2022-CodeDocumentation/tree/main/Dynamic%20Pathing)
-.
