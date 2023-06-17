@@ -1,10 +1,11 @@
 ## Finite State Machine
 
-When working with a system that needs to perform a certain set of tasks at one point in time and then switch to a different behavior later on, it can become complicated to create and manage these different "states" in which the system runs. A way to simplify this process is to implement a framework called a [finite-state machine](https://en.wikipedia.org/wiki/Finite-state_machine) which makes it much easier for the programmer to create distinct "states" that the program can switch between for different behaviors.
+A [finite-state machine](https://en.wikipedia.org/wiki/Finite-state_machine) is a system that, at a given point in time, is in one particular state out of a finite list of several states. The state machine can switch between certain states when ordered to (this is called a transition). A finite-state machine can be helpful when you have something that needs to perform a specific set of tasks at one point in time and then an entirely different set of tasks at another point in time. 
 
-I decided to use a finite-state machine for the different states of our lifting mechanism. We used a PS4 controller as our robot controller and therefore we  had a limited amount of buttons that we could use for certain actions. We needed to perform only certain actions during certain phases of the lifting process and we wanted to make sure we didn't accidentally perform incorrect actions during other phases. So, I implemented the finite-state machine so that actions could only be performed during the correct phase.
+We decided that it would be best to implement a finite-state machine for our robot's lifting mechanism due to the complicated processes of raising, extending, and lowering the lift. To manually control our robot we used a PS4 controller which has a limited amount of buttons. Implementing the finite-state machine allowed us to assign different actions to the same physical button depending on the state of the lifting mechanism.
 
-To create the state machine, I first had to create the actual variables which would keep track of which state the robot/lifting mechanism was in. I used the [enumerator datatype](https://en.wikipedia.org/wiki/Enumerated_type) in Java.
+
+I used the [enumerator datatype](https://en.wikipedia.org/wiki/Enumerated_type) in Java to keep track of the individual states.
 
 ```java
 public enum State {HOME, DEPOSIT, TRANSITION}
@@ -15,7 +16,7 @@ public State getState() {
   return state;
 }
 ```
-I then added a method which checked which state the lifting mechanism was in and performed the correct actions accordingly:
+I then added a method that checked which state the lifting mechanism was currently in and performed the correct actions accordingly:
 ```java
 switch(state) {
   case HOME:
@@ -52,6 +53,6 @@ switch(state) {
 ```
 A lot of the functional code that makes the servos turn or the motors run is cut out here to showcase the main functionality of the state machine. When the conditions of one state are met, the state machine then immediately switches to the next state. The states are in a constant cycle of switching back and forth between each other. 
 
-One neat little addition is the cooldown timer for the "TRANSITION" state. A timer keeps track of the last time the button was pressed and if it is too recent then it will not call for the state change. Because we use the same button to switch between the transition state and the deposit state, we have to add in the cooldown timer or else the state machine will switch between the two states for every single cycle that the button is pressed down.
+One neat little addition is the cooldown timer for the "TRANSITION" state. A timer keeps track of the last button press, and if the press is too recent then the code will not call for a state change. Because we use the same button to switch between the transition state and the deposit state, we have to add in the cooldown timer or else the state machine will switch between the two states for every single cycle that the button is pressed down.
 
-The state machine itself isn't too complex of a system to implement but it really does increase the efficiency and readability of the code substantially. We also used a state machine in the autonomous mode for the dynamic pathing (which you can learn about in the Dynamic Pathing section of this repository) but I think this page illustrates well enough how we used finite-state machines for our robot.
+The state machine itself isn't too complex of a system to implement and if used in a proper setting, it can increase the efficiency and readability of the code substantially.
