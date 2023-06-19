@@ -55,7 +55,7 @@ matTotalLeft = Core.sumElems(matWholeLeft).val[0];
 matTotalRight = Core.sumElems(matWholeRight).val[0];
 
 ```
-All that is left now is to implement the logic to actually determine where the marker is in relation to the robot. I used a simple process of elimination 
+All that is left now is to implement the logic to actually determine where the marker is in relation to the robot. I used a process of elimination 
 algorithm that returns that the marker is in the center if not enough lime pixels are present in the left or right views of the camera. The numerical "MARGIN" value is added as a buffer to ensure that one side actually has a substantially larger "lime" pixel count than the other side. The "MARGIN" value was chosen using trial and error along with outputs from debugging.
 ```java
 final int MARGIN = 100000;
