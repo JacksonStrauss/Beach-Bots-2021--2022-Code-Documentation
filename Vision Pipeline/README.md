@@ -1,7 +1,7 @@
 ## Vision Pipeline
 
 For the 2021-2022 FTC Challenge, a key task that our robot needed to be able to perform was color detection in 3D space.
-Each team had their own custom physical marker they could use for vision detection. Before the round started, the marker was randomly placed either to the left, center, or right of the robot, as illustrated in the colored squares on the field in the image below.
+Each team had their own custom physical marker they could use for vision detection. Before the round started, the marker was randomly placed either to the left, center, or right of the robot, as illustrated in the colored squares on the field in the image below. Depending on where the marker was placed, the robot had to perform a certain specific task.
 <p align="left">
   <img src="./Media/GameMarker.png" alt="Game Marker" width="500">
 </p>
